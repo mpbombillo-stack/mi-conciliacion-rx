@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary":"#ffffff","background":"#f8f9ff","error":"#ba1a1a","surface-bright":"#f8f9ff","on-error":"#ffffff","on-primary-container":"#fdfcff","surface-container":"#e5eeff","on-surface":"#0b1c30","on-tertiary-fixed":"#002115","surface-container-highest":"#d3e4fe","inverse-on-surface":"#eaf1ff","surface":"#f8f9ff","on-tertiary-container":"#f5fff7","surface-container-low":"#eff4ff","on-secondary-fixed":"#131b2e","on-tertiary-fixed-variant":"#00513a","on-tertiary":"#ffffff","on-secondary-fixed-variant":"#3f465c","inverse-primary":"#93ccff","primary-container":"#007bb9","outline":"#707881","surface-container-high":"#dce9ff","on-surface-variant":"#3f4850","primary-fixed":"#cce5ff","tertiary-container":"#1e8462","outline-variant":"#bfc7d2","tertiary-fixed":"#97f5cc","tertiary":"#00694c","on-primary-fixed-variant":"#004b73","secondary-fixed":"#dae2fd","on-background":"#0b1c30","primary-fixed-dim":"#93ccff","primary":"#006194","on-error-container":"#93000a","secondary-container":"#dae2fd","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","surface-dim":"#cbdbf5","secondary":"#565e74","tertiary-fixed-dim":"#7bd8b1","surface-tint":"#006398","on-primary-fixed":"#001d31","inverse-surface":"#213145","error-container":"#ffdad6","surface-variant":"#d3e4fe","on-secondary-container":"#5c647a","secondary-fixed-dim":"#bec6e0"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"gutter-dense":"8px","space-sm":"8px","space-base":"16px","space-lg":"20px","space-xs":"4px","space-2xl":"32px","space-xl":"24px","space-2xs":"2px","gutter-default":"12px","space-md":"12px","banner-inset":"12px 16px"},fontFamily:{"headline-md":["Inter"],"label-caps":["Inter"],"body-bold":["Inter"],"label-mono-metric":["Inter"],"body-medium":["Inter"],"body-dense":["Inter"],"body-base":["Inter"],"headline-sm":["Inter"],"display-lg":["Inter"],"code-audit":["JetBrains Mono"]},fontSize:{"headline-md":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-caps":["10px",{lineHeight:"14px",letterSpacing:"0.05em",fontWeight:"700"}],"body-bold":["13px",{lineHeight:"18px",fontWeight:"600"}],"label-mono-metric":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"600"}],"body-medium":["13px",{lineHeight:"18px",fontWeight:"500"}],"body-dense":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-base":["13px",{lineHeight:"18px",fontWeight:"400"}],"headline-sm":["15px",{lineHeight:"20px",fontWeight:"600"}],"display-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"code-audit":["11px",{lineHeight:"14px",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-base text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant shadow-[0_1px_4px_rgba(11,28,48,0.06)]"><div class="h-16 w-full px-space-base flex items-center justify-between gap-space-base"><div class="flex items-center gap-space-md shrink-0"><img alt="PharmaReconcile CDSS Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UKoI2qq4olEeq4d8u191cC7IjzoUx_UG8U69_OSqAibFzgwWkNyh6B0Rl9vL-vpFMwjf2lDG4zA7LOHHWBwvHmh-ieWR7cf0Gf1EfqOjG08xT0uqzG3WPuPzvFgCf9BOtx1PUEpC1YVAKi88srpF1qK_K1tdG3kf7WqwTSpJOfZ2sZQNdX3zrEscKzxTCaE_k_op3vSPeH6GZ_drEPLzI_YiDxTW8iTNEu_xOxyYEg84OdvTZQobBQgA"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary">PharmaReconcile CDSS v2.4</span><span class="font-code-audit text-code-audit px-space-xs py-space-2xs rounded bg-surface-container text-on-surface-variant">(HL7 FHIR R4 Connected)</span></div><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-tertiary"></span><span class="font-label-caps text-label-caps uppercase text-tertiary tracking-wider">PROD - HOSPITAL UNIVERSITARIO PABLO TOBÓN</span></div></div></div><nav class="hidden xl:flex items-center gap-space-xs bg-surface-container-low p-space-2xs rounded-xl border border-outline-variant" data-active-classes="bg-primary-container text-on-primary-container font-body-bold rounded-lg shadow-sm"><a class="font-body-medium text-body-medium px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="matriz-de-conciliacion" href="#">Matriz de Conciliación</a><a class="font-body-medium text-body-medium px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="verificacion-pie-de-cama-5c" href="#">Verificación Pie de Cama (5C)</a><a class="font-body-medium text-body-medium px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="hoja-de-alta-oms" href="#">Hoja de Alta (OMS)</a><a class="font-body-medium text-body-medium px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="auditoria-cdss" href="#">Auditoría CDSS</a></nav><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-error-container text-on-error-container border border-error/30 animate-pulse"><span class="material-symbols-outlined text-[16px] text-error">emergency</span><span class="font-label-caps text-label-caps uppercase">2 Bloqueos Críticos</span></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container text-on-surface-variant border border-outline-variant"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-code-audit text-code-audit">HL7 RXE: En Línea</span></div><div class="flex items-center gap-space-xs pl-space-xs border-l border-outline-variant"><div class="flex flex-col text-right"><span class="font-body-bold text-body-bold text-on-surface">Dra. M. Cardona</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Farmacéutica Clínica</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- ========================================================= -->
+<!-- 1. ZONA SUPERIOR: PatientClinicalBanner (Compact Medical) -->
+<!-- ========================================================= -->
+<section class="w-full bg-surface-container-lowest shadow-sm px-space-base py-space-sm mb-space-sm">
+<div class="w-full flex flex-col xl:flex-row xl:items-center justify-between gap-space-sm">
+<!-- Identidad y Cama -->
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded bg-primary-fixed flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">airline_seat_flat</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Carlos E. Restrepo Gómez</span>
+<span class="font-code-audit text-code-audit px-space-xs py-space-2xs bg-surface-container rounded text-on-surface-variant font-medium">PID #84920194</span>
+<span class="font-label-caps text-label-caps px-space-xs py-space-2xs bg-secondary-fixed text-on-secondary-fixed rounded uppercase font-bold">68a • Masc</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-dense text-body-dense">
+<span class="font-medium text-primary">Medicina Interna</span>
+<span>•</span>
+<span class="font-semibold text-on-surface">Cama 412-B</span>
+<span>•</span>
+<span class="font-code-audit text-code-audit">Adm: 24-Oct-2024 07:15</span>
+</div>
+</div>
+</div>
+<!-- Métricas Fisiológicas & DuBois BSA -->
+<div class="flex items-center gap-space-sm flex-wrap bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Antropometría</span>
+<span class="font-body-bold text-body-bold text-on-surface">78.4 kg <span class="text-on-surface-variant font-normal">| 172 cm</span></span>
+</div>
+<div class="h-6 w-px bg-outline-variant/60 hidden sm:block"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-2xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">ASC (DuBois)</span>
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant" title="Calculado: 0.007184 * 172^0.725 * 78.4^0.425">info</span>
+</div>
+<span class="font-body-bold text-body-bold text-primary flex items-center gap-space-2xs">
+            1.93 m² <span class="font-code-audit text-[10px] text-on-surface-variant font-normal">[Cálc Auto]</span>
+</span>
+</div>
+<div class="h-6 w-px bg-outline-variant/60 hidden sm:block"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-2xs">
+<span class="font-label-caps text-label-caps text-error uppercase font-bold">ClCr (Cockcroft)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-body-bold text-body-bold text-error">42 mL/min</span>
+<span class="font-label-caps text-[9px] bg-error-container text-on-error-container px-space-2xs rounded">Mod. / Acumulación</span>
+</div>
+</div>
+</div>
+<!-- Alergias & Discrepancias / Firma -->
+<div class="flex items-center gap-space-md shrink-0 justify-between xl:justify-end">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[13px] text-error">warning</span> Alergias Confirmadas
+          </span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-caps text-label-caps px-space-xs py-space-2xs bg-error-container text-on-error-container rounded font-bold uppercase tracking-wider" title="Reacción documentada: Shock anafiláctico (2018)">
+              Penicilinas (Anafilaxia)
+            </span>
+<span class="font-label-caps text-label-caps px-space-xs py-space-2xs bg-error-container text-on-error-container rounded font-bold uppercase tracking-wider">
+              Sulfonamidas
+            </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pl-space-xs border-l border-outline-variant/40">
+<div class="flex flex-col text-right">
+<span class="font-label-caps text-label-caps text-error uppercase font-bold flex items-center justify-end gap-space-2xs">
+<span class="w-2 h-2 rounded-full bg-error"></span> 3 Discrepancias • 1 Bloqueo Fatal
+            </span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Estado: En Progreso</span>
+</div>
+<button class="px-space-md py-space-xs rounded bg-surface-container-high text-on-surface-variant font-body-bold text-body-bold opacity-60 cursor-not-allowed flex items-center gap-space-xs shadow-none transition-all" disabled="" id="btn-consolidar" title="Resuelva los bloqueos críticos del CDSS para desbloquear la firma" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Firmar y Consolidar</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================= -->
+<!-- 2. RECONCILIATION TRI-PANE WORKSPACE (Medical Bento Grid) -->
+<!-- ========================================================= -->
+<div class="w-full px-space-base grid grid-cols-1 lg:grid-cols-12 gap-space-base pb-space-2xl">
+<!-- ======================================================= -->
+<!-- COLUMNA IZQUIERDA: PreAdmissionMedicationList (30%)     -->
+<!-- ======================================================= -->
+<section class="lg:col-span-4 xl:col-span-4 flex flex-col gap-space-sm">
+<!-- Header de Columna -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Medicación Pre-Ingreso</h2>
+</div>
+<span class="font-label-caps text-label-caps bg-primary-fixed text-on-primary-fixed px-space-xs py-space-2xs rounded-full font-bold">6 Fármacos</span>
+</div>
+<p class="font-body-dense text-body-dense text-on-surface-variant">Historia clínica electrónica ambulatoria, entrevista a familiar y fitoterapia activa.</p>
+<!-- Filtros y Búsqueda -->
+<div class="mt-space-xs flex flex-col gap-space-xs">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-2 top-2 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-8 pr-space-xs py-space-2xs bg-surface-container-low text-on-surface rounded font-body-dense text-body-dense focus:outline-none focus:bg-surface-container-lowest shadow-sm placeholder:text-on-surface-variant/70" placeholder="Buscar principio activo, ATC..." type="text"/>
+</div>
+<div class="flex items-center justify-between pt-space-2xs">
+<div class="flex gap-space-2xs">
+<button class="px-space-xs py-space-2xs bg-primary text-on-primary rounded font-label-caps text-label-caps">Todos</button>
+<button class="px-space-xs py-space-2xs bg-surface-container text-on-surface-variant rounded font-label-caps text-label-caps hover:bg-surface-container-high">ATC-C</button>
+<button class="px-space-xs py-space-2xs bg-surface-container text-on-surface-variant rounded font-label-caps text-label-caps hover:bg-surface-container-high">ATC-A</button>
+<button class="px-space-xs py-space-2xs bg-surface-container text-on-surface-variant rounded font-label-caps text-label-caps hover:bg-surface-container-high">ATC-M</button>
+</div>
+<label class="flex items-center gap-space-2xs cursor-pointer select-none">
+<input checked="" class="w-3.5 h-3.5 rounded accent-error cursor-pointer" type="checkbox"/>
+<span class="font-label-caps text-label-caps text-error font-bold uppercase">Solo MAR</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Lista de Fármacos Pre-Ingreso -->
+<div class="flex flex-col gap-space-xs">
+<!-- Fármaco 1: Enalapril (MAR) -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm hover:shadow transition-all relative overflow-hidden">
+<div class="w-1 bg-error absolute left-0 top-0 bottom-0"></div>
+<div class="pl-space-xs flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-2xs py-px bg-error-container text-on-error-container font-label-caps text-[9px] rounded font-bold">MAR</span>
+<span class="font-body-bold text-body-bold text-on-surface">Enalapril 20 mg</span>
+</div>
+<span class="font-label-caps text-label-caps px-space-xs py-space-2xs bg-surface-container text-primary font-semibold rounded">Prescrito</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-dense text-body-dense">
+<span>Posología: 1 comp c/12h VO (8:00 - 20:00)</span>
+<span class="font-code-audit text-code-audit">ATC: C09AA02</span>
+</div>
+<div class="flex items-center justify-between pt-space-2xs text-[11px] text-on-surface-variant/80">
+<span class="truncate">Indicación: HTA Esencial / Cardiología</span>
+<span class="text-tertiary font-medium">Adherencia: 94%</span>
+</div>
+</div>
+</div>
+<!-- Fármaco 2: Espironolactona (MAR) -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm hover:shadow transition-all relative overflow-hidden">
+<div class="w-1 bg-error absolute left-0 top-0 bottom-0"></div>
+<div class="pl-space-xs flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-2xs py-px bg-error-container text-on-error-container font-label-caps text-[9px] rounded font-bold">MAR</span>
+<span class="font-body-bold text-body-bold text-on-surface">Espironolactona 25 mg</span>
+</div>
+<span class="font-label-caps text-label-caps px-space-xs py-space-2xs bg-surface-container text-primary font-semibold rounded">Prescrito</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-dense text-body-dense">
+<span>Posología: 1 comp c/24h VO (Mañana)</span>
+<span class="font-code-audit text-code-audit">ATC: C03DA01</span>
+</div>
+<div class="flex items-center justify-between pt-space-2xs text-[11px] text-on-surface-variant/80">
+<span class="truncate">Indicación: Insuficiencia Cardíaca FEyI</span>
+<span class="text-tertiary font-medium">Adherencia: 90%</span>
+</div>
+</div>
+</div>
+<!-- Fármaco 3: Ibuprofeno 400 mg (Automedicado - Alerta) -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm hover:shadow transition-all relative overflow-hidden bg-error-container/10">
+<div class="w-1 bg-error absolute left-0 top-0 bottom-0"></div>
+<div class="pl-space-xs flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px] text-error">report_problem</span>
+<span class="font-body-bold text-body-bold text-error">Ibuprofeno 400 mg</span>
+</div>
+<span class="font-label-caps text-label-caps px-space-xs py-space-2xs bg-error-container text-on-error-container font-bold rounded uppercase">Automedicado</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-dense text-body-dense">
+<span>Frecuencia: c/8h VO a demanda (Último uso hace 6h)</span>
+<span class="font-code-audit text-code-audit">ATC: M01AE01</span>
+</div>
+<div class="bg-error-container/40 p-space-xs rounded text-[11px] text-on-error-container font-medium flex items-center gap-space-2xs mt-space-2xs">
+<span class="material-symbols-outlined text-[13px] text-error">warning</span>
+<span>Motivo: Lumbalgia mecánica crónica sin supervisión médica.</span>
+</div>
+</div>
+</div>
+<!-- Fármaco 4: Metotrexato 15 mg (MAR - Semanal) -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm hover:shadow transition-all relative overflow-hidden bg-primary-container/5">
+<div class="w-1 bg-primary absolute left-0 top-0 bottom-0"></div>
+<div class="pl-space-xs flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-2xs py-px bg-error-container text-on-error-container font-label-caps text-[9px] rounded font-bold">MAR</span>
+<span class="font-body-bold text-body-bold text-on-surface">Metotrexato 15 mg</span>
+</div>
+<span class="font-label-caps text-label-caps px-space-xs py-space-2xs bg-surface-container text-primary font-semibold rounded">Especialidad</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-dense text-body-dense">
+<span class="text-primary font-semibold">Pauta: ÚNICAMENTE VIERNES (Semanal)</span>
+<span class="font-code-audit text-code-audit">ATC: L04AX01</span>
+</div>
+<div class="flex items-center justify-between pt-space-2xs text-[11px] text-on-surface-variant/80">
+<span class="truncate">Indicación: Artritis Reumatoide Seropositiva</span>
+<span class="font-label-caps text-error uppercase font-bold">Omitido en MAR</span>
+</div>
+</div>
+</div>
+<!-- Fármaco 5: Atorvastatina 40 mg -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm hover:shadow transition-all relative overflow-hidden">
+<div class="w-1 bg-outline-variant absolute left-0 top-0 bottom-0"></div>
+<div class="pl-space-xs flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-body-bold text-body-bold text-on-surface">Atorvastatina 40 mg</span>
+<span class="font-label-caps text-label-caps px-space-xs py-space-2xs bg-surface-container text-primary font-semibold rounded">Prescrito</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-dense text-body-dense">
+<span>Posología: 1 comp c/24h VO noche (21:00)</span>
+<span class="font-code-audit text-code-audit">ATC: C10AA05</span>
+</div>
+<div class="flex items-center justify-between pt-space-2xs text-[11px] text-on-surface-variant/80">
+<span class="truncate">Indicación: Dislipidemia mixta / Prev. CV</span>
+<span class="text-on-surface-variant font-medium">Última toma: Ayer</span>
+</div>
+</div>
+</div>
+<!-- Fármaco 6: Ginkgo Biloba (Fitoterapia) -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm hover:shadow transition-all relative overflow-hidden">
+<div class="w-1 bg-tertiary-container absolute left-0 top-0 bottom-0"></div>
+<div class="pl-space-xs flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-body-bold text-body-bold text-on-surface">Ginkgo Biloba Extracto 120 mg</span>
+<span class="font-label-caps text-label-caps px-space-xs py-space-2xs bg-tertiary-fixed text-on-tertiary-fixed font-bold rounded uppercase">Fitoterapia</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-dense text-body-dense">
+<span>Posología: 1 cápsula al día por la mañana</span>
+<span class="font-code-audit text-code-audit">ATC: N06DX02</span>
+</div>
+<div class="bg-surface-container p-space-xs rounded text-[11px] text-on-surface-variant flex items-center gap-space-2xs mt-space-2xs">
+<span class="material-symbols-outlined text-[13px] text-secondary">eco</span>
+<span>Informado por hija del paciente; riesgo de interacción antiagregante.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================= -->
+<!-- COLUMNA CENTRAL: CurrentInpatientOrders & Actions (42%) -->
+<!-- ======================================================= -->
+<section class="lg:col-span-8 xl:col-span-5 flex flex-col gap-space-sm">
+<!-- Cabecera de Órdenes Activas -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">local_hospital</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Órdenes Hospitalarias Activas</h2>
+</div>
+<div class="flex items-center gap-space-2xs bg-surface-container px-space-xs py-space-2xs rounded">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-code-audit text-code-audit text-on-surface">HL7 RXE: Sincronizado hace 3 min</span>
+</div>
+</div>
+<!-- Banner de Alerta de Omisiones Involuntarias -->
+<div class="p-space-xs bg-error-container/30 rounded-lg flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">notification_important</span>
+<div class="flex flex-col text-[12px] leading-tight">
+<span class="font-body-bold text-error">Omisiones Involuntarias Detectadas por CDSS</span>
+<span class="text-on-surface">Atorvastatina 40mg y Metotrexato 15mg no figuran en las órdenes de ingreso del Servicio de Medicina Interna.</span>
+</div>
+</div>
+</div>
+<!-- Tarjetas de Órdenes con Cuadrante de Decisiones -->
+<div class="flex flex-col gap-space-sm">
+<!-- Tarjeta Orden 1: Losartán 50 mg (Duplicidad con Enalapril) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-bold text-body-bold text-on-surface">1. Losartán Potásico 50 mg VO</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">ORD-88219</span>
+</div>
+<span class="font-body-dense text-body-dense text-on-surface-variant">Posología pautada: 1 comp c/12h (09:00 - 21:00) • Vía Oral</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-caps text-label-caps bg-error-container text-on-error-container px-space-xs py-space-2xs rounded font-bold">
+                  DUPLICIDAD SRAA (IECA + ARA-II)
+                </span>
+<span class="font-label-caps text-label-caps bg-surface-container text-on-surface-variant px-space-xs py-space-2xs rounded">
+                  Dr. F. Morales (R3)
+                </span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-error uppercase font-bold">Acción Requerida</span>
+</div>
+</div>
+<!-- Selector de Acciones Farmacoterapéuticas -->
+<div class="grid grid-cols-4 gap-space-xs pt-space-xs border-t border-outline-variant/30">
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Continuar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-error text-on-error font-label-caps text-label-caps flex flex-col items-center gap-1 shadow-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>Suspender</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Modificar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">swap_horiz</span>
+<span>Sustituir</span>
+</button>
+</div>
+<div class="bg-error-container/20 p-space-xs rounded text-[11px] text-on-error-container flex items-center justify-between">
+<span>Motivo de Suspensión: Bloqueo dual del eje SRAA ineficaz con riesgo hiperpotasemia severa.</span>
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+</div>
+</div>
+<!-- Tarjeta Orden 2: Furosemida 40 mg IV -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-bold text-body-bold text-on-surface">2. Furosemida 40 mg IV</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">ORD-88220</span>
+</div>
+<span class="font-body-dense text-body-dense text-on-surface-variant">Posología pautada: 1 ampolla c/12h (08:00 - 16:00) • Bolo Intravenoso lento</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-caps text-label-caps bg-surface-container text-tertiary font-bold px-space-xs py-space-2xs rounded">
+                  Diurético de Asa
+                </span>
+<span class="font-label-caps text-label-caps bg-surface-container text-on-surface-variant px-space-xs py-space-2xs rounded">
+                  Balance +850 mL/24h
+                </span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-tertiary uppercase font-bold">Validado</span>
+</div>
+</div>
+<!-- Selector de Acciones Farmacoterapéuticas -->
+<div class="grid grid-cols-4 gap-space-xs pt-space-xs border-t border-outline-variant/30">
+<button class="py-space-xs px-space-2xs rounded bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps flex flex-col items-center gap-1 shadow-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Continuar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">cancel</span>
+<span>Suspender</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Modificar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">swap_horiz</span>
+<span>Sustituir</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded text-[11px] text-on-surface-variant flex items-center justify-between">
+<span>Decisión: Ajustado a diuresis y balance hídrico acumulado. Control electrolítico diario.</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified</span>
+</div>
+</div>
+<!-- Tarjeta Orden 3: Ketorolaco 30 mg IV (Alerta Triple Whammy) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-bold text-body-bold text-error">3. Ketorolaco Trometamol 30 mg IV</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">ORD-88223</span>
+</div>
+<span class="font-body-dense text-body-dense text-on-surface-variant">Posología: 1 amp c/8h IV diluido • Pautado para dolor lumbar agudo</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-caps text-label-caps bg-error-container text-on-error-container px-space-xs py-space-2xs rounded font-bold animate-pulse">
+                  BLOQUEO FATAL: TRIPLE WHAMMY
+                </span>
+<span class="font-label-caps text-label-caps bg-error-container text-on-error-container px-space-xs py-space-2xs rounded">
+                  ClCr 42 mL/min
+                </span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-error uppercase font-bold">Alta Severidad</span>
+</div>
+</div>
+<!-- Selector de Acciones Farmacoterapéuticas -->
+<div class="grid grid-cols-4 gap-space-xs pt-space-xs border-t border-outline-variant/30">
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Continuar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-error text-on-error font-label-caps text-label-caps flex flex-col items-center gap-1 shadow-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span>Suspender</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Modificar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">swap_horiz</span>
+<span>Sustituir</span>
+</button>
+</div>
+<div class="bg-error-container/20 p-space-xs rounded text-[11px] text-on-error-container flex items-center justify-between">
+<span>Intervención Clínica: Suspensión inmediata. Proponer analgesia con Paracetamol 1g IV + rescate opioide débil.</span>
+<span class="material-symbols-outlined text-[14px]">gavel</span>
+</div>
+</div>
+<!-- Tarjeta Orden 4: Reconciliación de Omisión (Metotrexato) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm relative border-l-4 border-primary">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-bold text-body-bold text-primary">4. Metotrexato Oral (Omisión por Reconciliar)</span>
+<span class="font-code-audit text-code-audit text-primary">PROPUESTA CDSS</span>
+</div>
+<span class="font-body-dense text-body-dense text-on-surface-variant">Reincorporar dosis ambulatoria para Artritis Reumatoide con protocolo semanal.</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-caps text-label-caps bg-primary-fixed text-on-primary-fixed px-space-xs py-space-2xs rounded font-bold">
+                  ENFORCER SEMANAL ACTIVO
+                </span>
+<span class="font-label-caps text-label-caps bg-surface-container text-on-surface-variant px-space-xs py-space-2xs rounded">
+                  + Ácido Fólico
+                </span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">Pauta Especial</span>
+</div>
+</div>
+<!-- Selector de Acciones Farmacoterapéuticas -->
+<div class="grid grid-cols-4 gap-space-xs pt-space-xs border-t border-outline-variant/30">
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Continuar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">cancel</span>
+<span>Suspender</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Modificar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-primary text-on-primary font-label-caps text-label-caps flex flex-col items-center gap-1 shadow-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+<span>Sustituir / Pautar</span>
+</button>
+</div>
+<div class="bg-primary-fixed/30 p-space-xs rounded text-[11px] text-on-primary-fixed-variant flex items-center justify-between">
+<span>Acción: Pautar 15 mg VO única dosis los Viernes a las 08:00 + Ácido Fólico 5 mg los Domingos.</span>
+<span class="material-symbols-outlined text-[14px]">event_repeat</span>
+</div>
+</div>
+<!-- Tarjeta Orden 5: Omeprazol 40 mg IV -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-bold text-body-bold text-on-surface">5. Omeprazol 40 mg IV</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">ORD-88225</span>
+</div>
+<span class="font-body-dense text-body-dense text-on-surface-variant">Posología pautada: 1 vial c/24h (07:00) • Infusión IV en 20 min</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-caps text-label-caps bg-surface-container text-tertiary font-bold px-space-xs py-space-2xs rounded">
+                  Profilaxis Úlcera por Estrés
+                </span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-label-caps text-tertiary uppercase font-bold">Concordante</span>
+</div>
+</div>
+<!-- Selector de Acciones Farmacoterapéuticas -->
+<div class="grid grid-cols-4 gap-space-xs pt-space-xs border-t border-outline-variant/30">
+<button class="py-space-xs px-space-2xs rounded bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps flex flex-col items-center gap-1 shadow-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Continuar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">cancel</span>
+<span>Suspender</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+<span>Modificar</span>
+</button>
+<button class="py-space-xs px-space-2xs rounded bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-container transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">swap_horiz</span>
+<span>Sustituir</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================= -->
+<!-- COLUMNA DERECHA: CDSS Rule Engine Sidebar (28%)         -->
+<!-- ======================================================= -->
+<section class="lg:col-span-12 xl:col-span-3 flex flex-col gap-space-sm">
+<!-- Cabecera de CDSS -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[22px] animate-pulse">crisis_alert</span>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Motor de Reglas CDSS</h2>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Inferencia Semántica v4.2</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps bg-error-container text-on-error-container px-space-xs py-space-2xs rounded font-bold">1 CRÍTICO</span>
+</div>
+<!-- WIDGET 1: CriticalBlockAlert (Triple Whammy) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-md flex flex-col gap-space-sm relative overflow-hidden bg-error-container/15">
+<div class="flex items-start gap-space-xs">
+<div class="w-8 h-8 rounded bg-error flex items-center justify-center text-on-error shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">dangerous</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-error font-bold uppercase tracking-wider">Bloqueo Farmacológico Crítico</span>
+<h3 class="font-headline-sm text-headline-sm text-error leading-tight mt-space-2xs">Triple Whammy: Falla Renal Inminente</h3>
+</div>
+</div>
+<!-- Tríada de Fármacos -->
+<div class="p-space-xs bg-error-container/30 rounded flex flex-col gap-space-2xs font-code-audit text-code-audit text-on-error-container">
+<div class="flex items-center justify-between">
+<span>[1] SRAA:</span>
+<span class="font-bold">Losartán / Enalapril</span>
+</div>
+<div class="flex items-center justify-between">
+<span>[2] Diurético:</span>
+<span class="font-bold">Furosemida</span>
+</div>
+<div class="flex items-center justify-between text-error">
+<span>[3] AINE:</span>
+<span class="font-bold">Ketorolaco / Ibuprofeno</span>
+</div>
+</div>
+<!-- Fisiopatología Detallada -->
+<p class="font-body-dense text-body-dense text-on-surface leading-relaxed">
+<span class="font-body-bold text-error">Mecanismo:</span> Bloqueo de prostaglandinas renales (AINEs reduce perfusión aferente) + vasodilatación eferente (IECA/ARA) + hipovolemia inducida por diurético de asa. Tasa de filtrado basal reducida a <strong>42 mL/min</strong> susceptible a necrosis tubular aguda.
+        </p>
+<!-- Override Form Obligatorio -->
+<div class="pt-space-xs flex flex-col gap-space-xs bg-surface-container-lowest/80 p-space-xs rounded">
+<span class="font-label-caps text-label-caps text-on-surface font-bold uppercase">Sobreescritura Clínica Mandatoria</span>
+<select class="w-full text-[12px] bg-surface-container-low text-on-surface rounded p-space-2xs border-0 focus:outline-none focus:bg-surface-container" id="select-justificacion">
+<option value="">Seleccionar Justificación Clínica...</option>
+<option value="1">Ketorolaco retirado; control con analgésico menor</option>
+<option value="2">Monitoreo continuo en UCI / Gasometría horaria</option>
+<option value="3">Decisión colegiada Médico Tratante - Farmacéutico</option>
+</select>
+<div class="flex gap-space-2xs">
+<input class="w-24 text-[12px] bg-surface-container-low text-on-surface rounded px-space-xs py-space-2xs focus:outline-none placeholder:text-on-surface-variant" maxlength="4" placeholder="PIN Firma" type="password"/>
+<button class="flex-1 py-space-2xs bg-error text-on-error rounded font-label-caps text-label-caps font-bold hover:bg-on-error-container transition-all flex items-center justify-center gap-1" onclick="ejecutarOverride()" type="button">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+<span>Validar Override</span>
+</button>
+</div>
+</div>
+</div>
+<!-- WIDGET 2: MethotrexateFrequencyEnforcer -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-sm relative">
+<div class="flex items-start gap-space-xs">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary font-bold uppercase tracking-wider">Protocolo de Seguridad ISMP</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight mt-space-2xs">Bloqueo Pauta Diaria: Metotrexato</h3>
+</div>
+</div>
+<div class="p-space-xs bg-surface-container-low rounded text-[12px] text-on-surface leading-relaxed">
+          Riesgo de <strong>pancitopenia fatal</strong> por confusión de intervalo. En indicaciones no oncológicas (Artritis Reumatoide), la administración DEBE ser semanal.
+        </div>
+<!-- UI Lock Selector Forzado Semanal -->
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold">Pauta Forzada por Sistema (Semanal)</span>
+<div class="grid grid-cols-7 gap-1 text-center">
+<span class="text-[10px] text-on-surface-variant font-medium">L</span>
+<span class="text-[10px] text-on-surface-variant font-medium">M</span>
+<span class="text-[10px] text-on-surface-variant font-medium">X</span>
+<span class="text-[10px] text-on-surface-variant font-medium">J</span>
+<span class="text-[10px] text-primary font-bold bg-primary-fixed rounded">V</span>
+<span class="text-[10px] text-on-surface-variant font-medium">S</span>
+<span class="text-[10px] text-tertiary font-bold bg-tertiary-fixed rounded">D</span>
+</div>
+<div class="p-space-xs bg-primary-fixed/20 rounded flex items-center justify-between text-[11px] text-primary font-medium mt-1">
+<span>Día MTX: Viernes (15 mg)</span>
+<span>Ác. Fólico: Domingo (5 mg)</span>
+</div>
+</div>
+</div>
+<!-- WIDGET 3: Interacción Fitoterapia-Anticoagulación -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">psychiatry</span>
+<h3 class="font-body-bold text-body-bold text-on-surface">Fitoterapia: Ginkgo Biloba</h3>
+</div>
+<p class="font-body-dense text-body-dense text-on-surface-variant">
+          Inhibición del factor activador de plaquetas (PAF). Si se introduce profilaxis de tromboembolismo venoso (HBPM/Enoxaparina), suspender fitoterapia 48h antes por riesgo de sangrado mayor.
+        </p>
+<div class="flex items-center justify-between pt-space-xs border-t border-outline-variant/30 text-on-surface-variant font-label-caps text-label-caps">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Monitorización MAR</span>
+<button class="text-primary font-bold hover:underline">Ver Farmacocinética</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  function ejecutarOverride() {
+    const sel = document.getElementById('select-justificacion');
+    const btnConsolidar = document.getElementById('btn-consolidar');
+    if (!sel.value) {
+      alert('Debe seleccionar una justificación clínica aprobada institucionalmente.');
+      return;
+    }
+    alert('Sobreescritura registrada en Bitácora HL7 FHIR (Auditoría ID: AUD-99201). Bloqueo liberado con supervisión de Farmacia Clínica.');
+    if (btnConsolidar) {
+      btnConsolidar.disabled = false;
+      btnConsolidar.classList.remove('opacity-60', 'cursor-not-allowed', 'bg-surface-container-high', 'text-on-surface-variant');
+      btnConsolidar.classList.add('bg-primary', 'text-on-primary', 'shadow-md', 'hover:bg-primary-container');
+      btnConsolidar.innerHTML = '<span class="material-symbols-outlined text-[16px]">draw</span><span>Firmar y Consolidar</span>';
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-space-sm px-space-base"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-xs text-on-surface-variant font-label-mono-metric text-label-mono-metric"><div>PharmaReconcile CDSS Clinical Protocol Engine | Conexión FHIR v4.0.1 segura HL7 MLLP/TLS 1.3</div><div class="flex items-center gap-space-base"><span>Seguridad Farmacológica: Validado OMS / ISMP</span><span class="font-code-audit text-code-audit text-primary">Nodo Activo: RXE-HUPTU-CLUSTER-02</span></div></div></footer></body></html>

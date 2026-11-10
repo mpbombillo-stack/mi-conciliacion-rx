@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'inverse-primary': '#93ccff', 'on-secondary': '#ffffff', 'on-primary-fixed-variant': '#004b73', 'error': '#ba1a1a', 'inverse-on-surface': '#eaf1ff', 'on-secondary-fixed-variant': '#3f465c', 'surface-container-lowest': '#ffffff', 'surface': '#f8f9ff', 'primary-fixed': '#cce5ff', 'on-secondary-fixed': '#131b2e', 'surface-container-low': '#eff4ff', 'tertiary-container': '#1e8462', 'tertiary-fixed-dim': '#7bd8b1', 'outline-variant': '#bfc7d2', 'primary-container': '#007bb9', 'on-primary-fixed': '#001d31', 'tertiary-fixed': '#97f5cc', 'tertiary': '#00694c', 'outline': '#707881', 'on-surface': '#0b1c30', 'on-background': '#0b1c30', 'surface-dim': '#cbdbf5', 'surface-bright': '#f8f9ff', 'inverse-surface': '#213145', 'secondary-container': '#dae2fd', 'surface-container': '#e5eeff', 'on-primary': '#ffffff', 'on-error-container': '#93000a', 'on-secondary-container': '#5c647a', 'secondary': '#565e74', 'secondary-fixed': '#dae2fd', 'surface-variant': '#d3e4fe', 'secondary-fixed-dim': '#bec6e0', 'on-primary-container': '#fdfcff', 'surface-tint': '#006398', 'on-tertiary-fixed': '#002115', 'on-surface-variant': '#3f4850', 'on-error': '#ffffff', 'on-tertiary-container': '#f5fff7', 'surface-container-high': '#dce9ff', 'surface-container-highest': '#d3e4fe', 'primary-fixed-dim': '#93ccff', 'on-tertiary-fixed-variant': '#00513a', 'error-container': '#ffdad6', 'on-tertiary': '#ffffff', 'background': '#f8f9ff', 'primary': '#006194' }, 'borderRadius': { 'DEFAULT': '0.125rem', 'lg': '0.25rem', 'xl': '0.5rem', 'full': '0.75rem' }, 'spacing': { 'space-2xs': '2px', 'banner-inset': '12px 16px', 'space-md': '12px', 'space-xs': '4px', 'space-2xl': '32px', 'space-sm': '8px', 'space-xl': '24px', 'gutter-default': '12px', 'space-base': '16px', 'gutter-dense': '8px', 'space-lg': '20px' }, 'fontFamily': { 'body-medium': ['Inter'], 'headline-sm': ['Inter'], 'body-base': ['Inter'], 'headline-md': ['Inter'], 'body-bold': ['Inter'], 'label-mono-metric': ['Inter'], 'display-lg': ['Inter'], 'code-audit': ['JetBrains Mono'], 'body-dense': ['Inter'], 'label-caps': ['Inter'] }, 'fontSize': { 'body-medium': ['13px', { 'lineHeight': '18px', 'fontWeight': '500' }], 'headline-sm': ['15px', { 'lineHeight': '20px', 'fontWeight': '600' }], 'body-base': ['13px', { 'lineHeight': '18px', 'fontWeight': '400' }], 'headline-md': ['18px', { 'lineHeight': '24px', 'letterSpacing': '-0.01em', 'fontWeight': '600' }], 'body-bold': ['13px', { 'lineHeight': '18px', 'fontWeight': '600' }], 'label-mono-metric': ['12px', { 'lineHeight': '16px', 'letterSpacing': '0.01em', 'fontWeight': '600' }], 'display-lg': ['24px', { 'lineHeight': '32px', 'letterSpacing': '-0.02em', 'fontWeight': '700' }], 'code-audit': ['11px', { 'lineHeight': '14px', 'fontWeight': '400' }], 'body-dense': ['12px', { 'lineHeight': '16px', 'fontWeight': '400' }], 'label-caps': ['10px', { 'lineHeight': '14px', 'letterSpacing': '0.05em', 'fontWeight': '700' }] } } } };</script></head><body class="bg-surface font-body-base text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] print:hidden"><div class="h-16 w-full px-8 flex items-center justify-between gap-space-base"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #0284c7
+- Font: inter
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UKoI2qq4olEeq4d8u191cC7IjzoUx_UG8U69_OSqAibFzgwWkNyh6B0Rl9vL-vpFMwjf2lDG4zA7LOHHWBwvHmh-ieWR7cf0Gf1EfqOjG08xT0uqzG3WPuPzvFgCf9BOtx1PUEpC1YVAKi88srpF1qK_K1tdG3kf7WqwTSpJOfZ2sZQNdX3zrEscKzxTCaE_k_op3vSPeH6GZ_drEPLzI_YiDxTW8iTNEu_xOxyYEg84OdvTZQobBQgA"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">PharmaReconcile</span><span class="font-label-caps text-label-caps bg-primary-fixed text-on-primary-fixed px-space-xs py-space-2xs rounded">v2.4 CDSS</span></div><span class="font-code-audit text-code-audit text-on-surface-variant leading-none">Hospital Universitario Pablo Tobón Uribe</span></div></div><nav class="hidden xl:flex items-center gap-space-xs p-space-xs rounded-lg bg-surface-container-low" data-active-classes="bg-primary text-on-primary font-body-bold rounded-lg shadow-sm"><a class="font-body-medium text-body-medium px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors rounded" data-path="matriz-de-conciliacion" href="#">Matriz de Conciliación</a><a class="font-body-medium text-body-medium px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors rounded" data-path="verificacion-pie-de-cama-5c" href="#">Verificación Pie de Cama (5C)</a><a class="font-body-medium text-body-medium px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors rounded" data-path="hoja-de-alta-oms" href="#">Hoja de Alta (OMS)</a><a class="font-body-medium text-body-medium px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors rounded" data-path="auditoria-cdss" href="#">Auditoría CDSS</a></nav></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container px-space-md py-space-xs rounded font-body-medium text-body-medium shadow-sm transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">print</span><span>Exportar Informe FHIR / Imprimir</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="text-right hidden sm:flex flex-col"><span class="font-body-bold text-body-bold text-on-surface leading-tight">Dra. M. Arismendi</span><span class="font-code-audit text-code-audit text-on-surface-variant">Farmacéutica Clínica UCIA</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Action & Print Control Strip (Visible on screen, tailored on print) -->
+<div class="w-full bg-surface-container-low px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 print:hidden">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Plan Farmacoterapéutico de Egreso</span>
+<span class="font-label-caps text-label-caps bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded">Validado CDSS OMS</span>
+</div>
+<p class="font-code-audit text-code-audit text-on-surface-variant">
+          Verificado por Dra. M. Cardona (Reg. FarmaClínica #8492) &amp; Dr. F. Morales (Med. Interna) • Protocolo FHIR v2.4
+        </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-body-bold text-body-bold hover:bg-primary-container hover:text-on-primary-container shadow-sm transition-colors" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Imprimir Guía A4</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-body-medium text-body-medium hover:bg-surface-variant transition-colors" id="fhir-btn" onclick="triggerFhirDownload()" type="button">
+<span class="material-symbols-outlined text-[18px]">data_object</span>
+<span>Exportar FHIR JSON</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-body-medium text-body-medium hover:bg-surface-variant transition-colors" id="share-btn" onclick="simulatePatientShare()" type="button">
+<span class="material-symbols-outlined text-[18px]">cell_tower</span>
+<span>Enviar a WhatsApp / Portal</span>
+</button>
+</div>
+</div>
+<!-- Main Document Container -->
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6">
+<!-- Header & Clinical Identification Banner -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 pb-4 bg-gradient-to-r from-transparent via-surface-container-low/40 to-transparent">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[32px]">folder_shared</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-label-caps text-label-caps tracking-wider text-primary">GUÍA DE SEGURIDAD FARMACOLÓGICA AL ALTA</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">DOC: HOU-REC-2024-84920</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">Carlos E. Restrepo Gómez</h1>
+<div class="flex items-center gap-3 text-on-surface-variant font-body-medium text-body-medium flex-wrap mt-0.5">
+<span><strong>PID:</strong> #84920194</span>
+<span>•</span>
+<span><strong>Edad:</strong> 68 años (Masculino)</span>
+<span>•</span>
+<span><strong>Fecha de Alta:</strong> 26 de Octubre de 2024</span>
+<span>•</span>
+<span><strong>Cama Previa:</strong> 402-B (Medicina Interna)</span>
+</div>
+</div>
+</div>
+<!-- QR Mobile & Portal Access Module -->
+<div class="flex items-center gap-3 bg-surface-container-low p-2.5 rounded-lg shrink-0">
+<div class="w-16 h-16 bg-surface-container-lowest p-1 rounded flex items-center justify-center shadow-sm">
+<!-- Precise QR Vector representation -->
+<svg class="w-full h-full text-on-surface" fill="currentColor" viewbox="0 0 100 100">
+<rect fill="currentColor" height="28" width="28" x="5" y="5"></rect>
+<rect fill="#ffffff" height="18" width="18" x="10" y="10"></rect>
+<rect fill="currentColor" height="10" width="10" x="14" y="14"></rect>
+<rect fill="currentColor" height="28" width="28" x="67" y="5"></rect>
+<rect fill="#ffffff" height="18" width="18" x="72" y="10"></rect>
+<rect fill="currentColor" height="10" width="10" x="76" y="14"></rect>
+<rect fill="currentColor" height="28" width="28" x="5" y="67"></rect>
+<rect fill="#ffffff" height="18" width="18" x="10" y="72"></rect>
+<rect fill="currentColor" height="10" width="10" x="14" y="76"></rect>
+<rect fill="currentColor" height="16" width="8" x="42" y="12"></rect>
+<rect fill="currentColor" height="8" width="6" x="55" y="6"></rect>
+<rect fill="currentColor" height="16" width="16" x="42" y="40"></rect>
+<rect fill="currentColor" height="8" width="26" x="65" y="44"></rect>
+<rect fill="currentColor" height="24" width="8" x="72" y="60"></rect>
+<rect fill="currentColor" height="12" width="12" x="45" y="68"></rect>
+<rect fill="currentColor" height="10" width="10" x="85" y="80"></rect>
+<rect fill="currentColor" height="6" width="18" x="12" y="42"></rect>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-body-bold text-body-bold text-on-surface leading-tight">Acceso Celular</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant max-w-[130px] leading-tight mt-0.5">Escanee para alarmas y horario en el celular</span>
+<span class="font-label-caps text-label-caps text-tertiary mt-1">ENLACE ACTIVO</span>
+</div>
+</div>
+</div>
+<!-- Clinical Metrics & Diagnostic Tags Strip -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-3 pt-2">
+<div class="bg-surface-container-low p-3 rounded-lg flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Diagnósticos de Alta</span>
+<span class="font-body-bold text-body-bold text-on-surface mt-1">Insuficiencia Cardíaca (FEVI red.)</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">HTA Grado II • Artritis Reumatoide Seropositiva</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Monitoreo Renal (CrCl)</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-primary">42 mL/min</span>
+<span class="font-label-mono-metric text-label-mono-metric text-on-surface-variant">ClCr Cockcroft</span>
+</div>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Creatinina: 1.35 mg/dL • Ajuste de dosis activo</span>
+</div>
+<div class="bg-error-container p-3 rounded-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-on-error-container">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span class="font-label-caps text-label-caps uppercase">Alergias Confirmadas</span>
+</div>
+<div class="flex flex-wrap gap-1 mt-1">
+<span class="bg-error text-on-error px-2 py-0.5 rounded font-label-caps text-label-caps">Penicilinas (Anafilaxia)</span>
+<span class="bg-error/80 text-on-error px-2 py-0.5 rounded font-label-caps text-label-caps">Sulfonamidas</span>
+</div>
+</div>
+<span class="font-code-audit text-code-audit text-on-error-container mt-1">Riesgo vital documentado en CDSS</span>
+</div>
+<!-- Strict Clinical Safety Alert for NSAIDs -->
+<div class="bg-error-container/60 p-3 rounded-lg flex flex-col justify-between">
+<div class="flex items-center gap-1.5 text-on-error-container">
+<span class="material-symbols-outlined text-[18px]">block</span>
+<span class="font-body-bold text-body-bold uppercase leading-tight">Prohibido AINEs</span>
+</div>
+<p class="font-body-dense text-body-dense text-on-error-container leading-tight mt-1">
+            NO consumir Ibuprofeno, Ketorolaco, Naproxeno o Diclofenaco. Riesgo severo de falla renal aguda y descompensación cardíaca.
+          </p>
+</div>
+</div>
+</div>
+<!-- The 5 Moments for Medication Safety (OMS / WHO Pillars) -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">health_and_safety</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Los 5 Momentos para la Seguridad de los Medicamentos (OMS)</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-low px-2 py-1 rounded hidden sm:inline-block">Educación al Paciente y Familia</span>
+</div>
+<p class="font-body-base text-body-base text-on-surface-variant">
+        La Organización Mundial de la Salud recomienda tener claras estas cinco etapas clave en su tratamiento de regreso a casa:
+      </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mt-1">
+<!-- Moment 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-code-audit text-code-audit flex items-center justify-center font-bold">1</span>
+<span class="font-body-bold text-body-bold text-on-surface">¿Comenzando?</span>
+</div>
+<p class="font-code-audit text-code-audit text-on-surface-variant leading-snug">
+            Conozca el nombre, dosis y para qué sirve cada pastilla nueva indicada.
+          </p>
+</div>
+<!-- Moment 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-code-audit text-code-audit flex items-center justify-center font-bold">2</span>
+<span class="font-body-bold text-body-bold text-on-surface">¿Tomando?</span>
+</div>
+<p class="font-code-audit text-code-audit text-on-surface-variant leading-snug">
+            Tómelo a la hora y forma exacta. Use organizadores y alarmas diarias.
+          </p>
+</div>
+<!-- Moment 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-code-audit text-code-audit flex items-center justify-center font-bold">3</span>
+<span class="font-body-bold text-body-bold text-on-surface">¿Añadiendo?</span>
+</div>
+<p class="font-code-audit text-code-audit text-on-surface-variant leading-snug">
+            Nunca agregue remedios naturales ni medicamentos sin aval médico.
+          </p>
+</div>
+<!-- Moment 4 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-code-audit text-code-audit flex items-center justify-center font-bold">4</span>
+<span class="font-body-bold text-body-bold text-on-surface">¿Revisando?</span>
+</div>
+<p class="font-code-audit text-code-audit text-on-surface-variant leading-snug">
+            Lleve siempre esta hoja a todas sus citas médicas y exámenes de sangre.
+          </p>
+</div>
+<!-- Moment 5 -->
+<div class="p-3 rounded-lg bg-error-container/40 flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-error text-on-error font-code-audit text-code-audit flex items-center justify-center font-bold">5</span>
+<span class="font-body-bold text-body-bold text-on-error-container">¿Dejando?</span>
+</div>
+<p class="font-code-audit text-code-audit text-on-error-container leading-snug">
+            Deseche las pastillas canceladas. No vuelva a tomarlas aunque le sobren.
+          </p>
+</div>
+</div>
+</div>
+<!-- Active Discharge Pharmacotherapy Schedule -->
+<div class="w-full flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Medicamentos Activos al Salir del Hospital</h2>
+<p class="font-body-dense text-body-dense text-on-surface-variant">Siga este esquema diario riguroso. Cada recuadro indica cómo y a qué hora tomar su medicina.</p>
+</div>
+<div class="flex items-center gap-2 font-code-audit text-code-audit text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span> Continuado</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Ajustado</span>
+<span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-error"></span> Alto Riesgo MAR</span>
+</div>
+</div>
+<!-- Medication Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- CARD 1: Losartán -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between gap-4 transition-all">
+<div class="flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-primary bg-primary-fixed px-2 py-0.5 rounded uppercase">Continuar / Optimizado</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Losartán Potásico 50 mg</h3>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Tableta • Vía Oral • Código ATC: C09CA01</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">cardiology</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">info</span>
+<span class="font-body-dense text-body-dense text-on-surface"><strong>Propósito:</strong> Controlar la presión arterial y proteger la función de su corazón.</span>
+</div>
+<!-- Time of day timetable indicator -->
+<div class="grid grid-cols-4 gap-1 py-1 text-center font-code-audit text-code-audit">
+<div class="p-2 rounded bg-primary text-on-primary flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">wb_twilight</span>
+<span class="font-bold">Mañana</span>
+<span>08:00 (1 pastilla)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+<span>Mediodía</span>
+<span>-</span>
+</div>
+<div class="p-2 rounded bg-primary text-on-primary flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">nightlight_round</span>
+<span class="font-bold">Noche</span>
+<span>20:00 (1 pastilla)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">bedtime</span>
+<span>Dormir</span>
+<span>-</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">lightbulb</span>
+<span class="font-body-dense text-body-dense text-on-surface-variant leading-snug">
+<strong>Consejo de seguridad:</strong> Tómelo siempre a las mismas horas. Al levantarse de la cama o de una silla, hágalo despacio para evitar mareos momentáneos.
+            </span>
+</div>
+</div>
+<!-- CARD 2: Furosemida (Ajustado) -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between gap-4 transition-all">
+<div class="flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded uppercase">Ajuste de Dosis • Vía Oral</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Furosemida 40 mg</h3>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Tableta • Vía Oral (Pasa de IV en hospital a Oral en casa)</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">water_drop</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">info</span>
+<span class="font-body-dense text-body-dense text-on-surface"><strong>Propósito:</strong> Diurético para eliminar el exceso de líquido acumulado en piernas y pulmones.</span>
+</div>
+<!-- Time of day timetable indicator -->
+<div class="grid grid-cols-4 gap-1 py-1 text-center font-code-audit text-code-audit">
+<div class="p-2 rounded bg-tertiary text-on-tertiary flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">wb_twilight</span>
+<span class="font-bold">Mañana</span>
+<span>08:00 (1 pastilla)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+<span>Mediodía</span>
+<span>-</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">nightlight_round</span>
+<span>Tarde</span>
+<span>-</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">bedtime</span>
+<span>Noche</span>
+<span>-</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">timer</span>
+<span class="font-body-dense text-body-dense text-on-surface-variant leading-snug">
+<strong>Regla de oro:</strong> Tomar únicamente en la mañana con el desayuno. <em>¡Nunca tomar en la tarde o noche para no interrumpir su descanso nocturno!</em> Pésese cada mañana en ayunas.
+            </span>
+</div>
+</div>
+<!-- CARD 3: CRITICAL HIGH-RISK MEDICATION (Metotrexato Semanal + Rescate Ácido Fólico) -->
+<div class="md:col-span-2 bg-error-container/30 rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-2 bg-gradient-to-r from-transparent via-error/10 to-transparent">
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="bg-error text-on-error px-2.5 py-0.5 rounded font-label-caps text-label-caps">MEDICAMENTO DE ALTO RIESGO (MAR)</span>
+<span class="font-label-caps text-label-caps text-error bg-surface-container-lowest px-2 py-0.5 rounded">PAUTA SEMANAL ESTRICTA</span>
+</div>
+<h3 class="font-display-lg text-display-lg text-on-surface mt-1">Metotrexato 15 mg (Dosis Total Semanal)</h3>
+<p class="font-body-medium text-body-medium text-error font-bold">
+                ¡SOLO UNA VEZ POR SEMANA: TODOS LOS VIERNES!
+              </p>
+</div>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg text-right">
+<span class="font-code-audit text-code-audit text-on-surface-variant">Presentación indicada:</span>
+<div class="font-headline-sm text-headline-sm text-error">6 pastillas de 2.5 mg</div>
+</div>
+</div>
+<!-- Alert Callout Banner inside Card -->
+<div class="bg-error text-on-error p-3.5 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-[24px] shrink-0">dangerous</span>
+<div class="flex flex-col text-sm">
+<span class="font-body-bold text-body-bold uppercase tracking-wide">ADVERTENCIA VITAL AL PACIENTE Y CUIDADOR</span>
+<p class="font-body-dense text-body-dense mt-0.5 leading-relaxed">
+                NUNCA tome Metotrexato todos los días. La toma diaria produce envenenamiento y puede ser mortal. Si tiene cualquier duda antes de tomarlo, llame inmediatamente a la farmacia clínica del hospital.
+              </p>
+</div>
+</div>
+<!-- Weekly Schedule Step-by-Step Module -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<!-- Step 1: Friday -->
+<div class="bg-surface-container-lowest p-3.5 rounded-lg flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+                  PASO 1: VIERNES (Día de Metotrexato)
+                </span>
+<span class="font-label-caps text-label-caps bg-error-container text-on-error-container px-2 py-0.5 rounded">08:00 AM</span>
+</div>
+<p class="font-body-dense text-body-dense text-on-surface-variant">
+                Tome las <strong>6 pastillas juntas de 2.5 mg</strong> (total 15 mg) acompañadas de un vaso completo de agua durante el desayuno.
+              </p>
+<div class="mt-1 flex items-center gap-1 text-on-surface-variant font-code-audit text-code-audit">
+<span class="material-symbols-outlined text-[15px]">event</span>
+<span>Siguiente toma: Viernes próximo. No repetir sábado ni domingo.</span>
+</div>
+</div>
+<!-- Step 2: Sunday Folic Acid Rescue -->
+<div class="bg-surface-container-lowest p-3.5 rounded-lg flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+                  PASO 2: DOMINGO (Ácido Fólico de Protección)
+                </span>
+<span class="font-label-caps text-label-caps bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded">48h DESPUÉS</span>
+</div>
+<p class="font-body-dense text-body-dense text-on-surface-variant">
+                Tome <strong>1 comprimido de Ácido Fólico 5 mg</strong> en el desayuno. Protege su sangre, boca e hígado contra efectos adversos.
+              </p>
+<div class="mt-1 flex items-center gap-1 text-tertiary font-code-audit text-code-audit">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>Protector obligatorio programado exactamente 48 horas post-dosis.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 4: Atorvastatina -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between gap-4 transition-all">
+<div class="flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded uppercase">Continuar</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Atorvastatina 40 mg</h3>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Comprimido • Vía Oral • Noche</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">shield_with_heart</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">info</span>
+<span class="font-body-dense text-body-dense text-on-surface"><strong>Propósito:</strong> Reducir colesterol y prevenir formación de trombos en vasos sanguíneos.</span>
+</div>
+<!-- Time of day timetable indicator -->
+<div class="grid grid-cols-4 gap-1 py-1 text-center font-code-audit text-code-audit">
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">wb_twilight</span>
+<span>Mañana</span>
+<span>-</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+<span>Mediodía</span>
+<span>-</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">nightlight_round</span>
+<span>Tarde</span>
+<span>-</span>
+</div>
+<div class="p-2 rounded bg-primary text-on-primary flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">bedtime</span>
+<span class="font-bold">Al Acostarse</span>
+<span>21:00 (1 pastilla)</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">tips_and_updates</span>
+<span class="font-body-dense text-body-dense text-on-surface-variant leading-snug">
+<strong>Recomendación:</strong> Tomar con un vaso de agua antes de ir a dormir. Evite consumir toronja o jugo de pomelo mientras tome este medicamento.
+            </span>
+</div>
+</div>
+<!-- CARD 5: Omeprazol -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between gap-4 transition-all">
+<div class="flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded uppercase">Continuar</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Omeprazol 20 mg</h3>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Cápsula con gránulos gastrorresistentes • Vía Oral</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">medication</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">info</span>
+<span class="font-body-dense text-body-dense text-on-surface"><strong>Propósito:</strong> Proteger el revestimiento gástrico durante los tratamientos orales.</span>
+</div>
+<!-- Time of day timetable indicator -->
+<div class="grid grid-cols-4 gap-1 py-1 text-center font-code-audit text-code-audit">
+<div class="p-2 rounded bg-primary text-on-primary flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">wb_twilight</span>
+<span class="font-bold">Ayunas</span>
+<span>07:30 (1 cápsula)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+<span>Mediodía</span>
+<span>-</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">nightlight_round</span>
+<span>Tarde</span>
+<span>-</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low text-on-surface-variant/60 flex flex-col items-center">
+<span class="material-symbols-outlined text-[16px]">bedtime</span>
+<span>Noche</span>
+<span>-</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] shrink-0 mt-0.5">restaurant</span>
+<span class="font-body-dense text-body-dense text-on-surface-variant leading-snug">
+<strong>Instrucción precisa:</strong> Debe ingerirse 30 minutos <strong>antes</strong> del desayuno. Tráguela entera; no la mastique ni abra el contenido de la cápsula.
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Definitively Discontinued Medications (Momento 5 OMS - Lo que NO debe volver a tomar) -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-error">Medicamentos Suspendidos Definitivamente</h2>
+<p class="font-code-audit text-code-audit text-on-surface-variant">Momento 5 OMS: Deseche o separe estas medicinas de su botiquín familiar</p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps bg-error-container text-on-error-container px-2.5 py-1 rounded">
+          ¡NO REINICIAR BAJO NINGÚN CONCEPTO!
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<!-- Discontinued 1 -->
+<div class="p-4 rounded-xl bg-error-container/20 flex flex-col justify-between gap-3">
+<div>
+<div class="flex items-center justify-between">
+<span class="line-through font-body-bold text-body-bold text-error">Ibuprofeno 400 mg / AINEs</span>
+<span class="material-symbols-outlined text-error text-[18px]">block</span>
+</div>
+<p class="font-body-dense text-body-dense text-on-error-container mt-2">
+<strong>Motivo médico:</strong> Provoca deterioro severo de la función renal e interactúa peligrosamente con Losartán y Furosemida.
+            </p>
+</div>
+<div class="p-2.5 bg-surface-container-lowest rounded-lg">
+<span class="font-label-caps text-label-caps text-tertiary">ALTERNATIVA SEGURA APROBADA:</span>
+<p class="font-body-dense text-body-dense text-on-surface mt-0.5">
+<strong>Acetaminofén (Paracetamol) 500 mg</strong> si presenta dolor articular leve. Máximo 2 g al día (4 pastillas).
+            </p>
+</div>
+</div>
+<!-- Discontinued 2 -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3">
+<div>
+<div class="flex items-center justify-between">
+<span class="line-through font-body-bold text-body-bold text-on-surface-variant">Enalapril 20 mg</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">remove_done</span>
+</div>
+<p class="font-body-dense text-body-dense text-on-surface-variant mt-2">
+<strong>Motivo médico:</strong> Ha sido sustituido por <strong>Losartán</strong> para una mejor tolerancia respiratoria y control.
+            </p>
+</div>
+<div class="p-2.5 bg-surface-container-lowest rounded-lg">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ACCIÓN REQUERIDA:</span>
+<p class="font-body-dense text-body-dense text-on-surface-variant mt-0.5">
+              Deseche las cajas viejas de Enalapril para no duplicar el tratamiento ni confundir frascos.
+            </p>
+</div>
+</div>
+<!-- Discontinued 3 -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between gap-3">
+<div>
+<div class="flex items-center justify-between">
+<span class="line-through font-body-bold text-body-bold text-on-surface-variant">Ginkgo Biloba (Hierbas/Gotas)</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">spa</span>
+</div>
+<p class="font-body-dense text-body-dense text-on-surface-variant mt-2">
+<strong>Motivo médico:</strong> Suplemento herbario no supervisado que incrementa el riesgo de hemorragia y toxicidad hepática.
+            </p>
+</div>
+<div class="p-2.5 bg-surface-container-lowest rounded-lg">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ACCIÓN REQUERIDA:</span>
+<p class="font-body-dense text-body-dense text-on-surface-variant mt-0.5">
+              Suspender de forma permanente. Consulte siempre antes de iniciar cualquier infusión o producto de tienda naturista.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Safety Signs & Follow-up Action Plan -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+<!-- Traffic Light Safety Module (Semáforo de Alarma) -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">traffic</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Semáforo de Seguridad: ¿Cuándo Consultar?</h3>
+<p class="font-code-audit text-code-audit text-on-surface-variant">Identifique los signos clínicos para actuar oportunamente</p>
+</div>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Red: Urgencies -->
+<div class="p-3 rounded-lg bg-error-container/40 flex items-start gap-3">
+<div class="w-3.5 h-3.5 rounded-full bg-error shrink-0 mt-1"></div>
+<div>
+<span class="font-body-bold text-body-bold text-error uppercase">Alerta Roja - Acuda a Urgencias de Inmediato:</span>
+<p class="font-body-dense text-body-dense text-on-surface-variant mt-0.5">
+                Falta de aire repentina estando sentado o acostado, dolor en el pecho, hinchazón brusca en ambas piernas, fiebre alta después de tomar Metotrexato o sangrado inexplicable por encías/orina.
+              </p>
+</div>
+</div>
+<!-- Yellow: Call Clinic -->
+<div class="p-3 rounded-lg bg-secondary-container/50 flex items-start gap-3">
+<div class="w-3.5 h-3.5 rounded-full bg-secondary shrink-0 mt-1"></div>
+<div>
+<span class="font-body-bold text-body-bold text-on-surface uppercase">Alerta Amarilla - Contacte a la Unidad Farmacéutica / Médico:</span>
+<p class="font-body-dense text-body-dense text-on-surface-variant mt-0.5">
+                Aumento de más de 1.5 kg de peso en 2 días consecutivos (indica retención de agua), mareos frecuentes al ponerse de pie, o dudas en la toma semanal de Metotrexato.
+              </p>
+</div>
+</div>
+<!-- Green: Optimal Control -->
+<div class="p-3 rounded-lg bg-tertiary-fixed/30 flex items-start gap-3">
+<div class="w-3.5 h-3.5 rounded-full bg-tertiary shrink-0 mt-1"></div>
+<div>
+<span class="font-body-bold text-body-bold text-tertiary uppercase">Zona Verde - Todo en Orden:</span>
+<p class="font-body-dense text-body-dense text-on-surface-variant mt-0.5">
+                Peso estable, respiración tranquila al caminar, ausencia de hinchazón y cumplimiento de todas las tomas a la hora fijada.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Follow-up Appointment & Clinical Contacts -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[22px]">calendar_clock</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Próximo Control Clínico</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-primary">CITA PROGRAMADA OBLIGATORIA</span>
+<span class="font-body-bold text-body-bold text-on-surface">Consulta Medicina Interna &amp; Control Renal</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Fecha: 09 de Noviembre de 2024 • 09:30 AM</span>
+<span class="font-body-dense text-body-dense text-on-surface mt-1">Hospital Universitario Pablo Tobón Uribe • Consultorio 312</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">EXÁMENES PREVIOS (48 HORAS ANTES)</span>
+<span class="font-code-audit text-code-audit text-on-surface">Creatinina Sérica • BUN • Ionograma (Sodio/Potasio) • Cuadro Hemático</span>
+</div>
+</div>
+<div class="pt-2">
+<div class="flex items-center gap-2 text-on-surface-variant font-code-audit text-code-audit">
+<span class="material-symbols-outlined text-[16px] text-tertiary">support_agent</span>
+<span>Línea Farmacéutica 24/7: (604) 445-9000 Ext. 4892</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Official Validation & Electronic Signatures -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Validación Multidisciplinar y Custodia del Paciente</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Estándar FHIR R4: MedicationStatement/AuditTrail</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+<!-- Signature 1: Clinical Pharmacist -->
+<div class="flex flex-col gap-1 bg-surface-container-low p-3.5 rounded-lg">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-body-bold text-body-bold text-on-surface">Dra. Marcela Cardona H.</span>
+</div>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Especialista en Farmacia Clínica • Reg. #8492</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">FIRMA DIGITAL CRIPTOGRÁFICA</span>
+<span class="font-code-audit text-code-audit text-tertiary truncate">HASH: 9a7f.e23b.cc81.049f.77da</span>
+</div>
+<!-- Signature 2: Attending Physician -->
+<div class="flex flex-col gap-1 bg-surface-container-low p-3.5 rounded-lg">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-body-bold text-body-bold text-on-surface">Dr. Fernando Morales R.</span>
+</div>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Médico Especialista en Medicina Interna • RM #184920</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">FIRMA DIGITAL CRIPTOGRÁFICA</span>
+<span class="font-code-audit text-code-audit text-primary truncate">HASH: 3c11.0f9a.887b.d442.e019</span>
+</div>
+<!-- Signature 3: Patient/Caregiver Acknowledgment -->
+<div class="flex flex-col gap-1 bg-surface-container-low p-3.5 rounded-lg">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+<span class="font-body-bold text-body-bold text-on-surface">Don Carlos Restrepo Gómez</span>
+</div>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Paciente / Familiar Acompañante</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">CONSENTIMIENTO INFORMADO</span>
+<span class="font-code-audit text-code-audit text-on-surface-variant">Entendido y Recibido en Físico y Digital</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between pt-2 text-on-surface-variant font-code-audit text-code-audit gap-2">
+<span>PharmaReconcile CDSS v2.4 • Generado el 26/10/2024 a las 11:42 COT</span>
+<span>Hospital Universitario Pablo Tobón Uribe • Medellín, Colombia</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function triggerFhirDownload() {
+    const fhirResource = {
+      resourceType: "Bundle",
+      type: "document",
+      timestamp: "2024-10-26T11:42:00-05:00",
+      entry: [
+        {
+          resource: {
+            resourceType: "Patient",
+            id: "84920194",
+            name: [{ family: "Restrepo Gómez", given: ["Carlos", "E."] }],
+            gender: "male",
+            birthDate: "1956-04-12"
+          }
+        },
+        {
+          resource: {
+            resourceType: "MedicationStatement",
+            status: "active",
+            medicationCodeableConcept: {
+              coding: [{ system: "http://www.whocc.no/atc", code: "L01BA01", display: "Methotrexate 15mg weekly" }]
+            },
+            timing: {
+              repeat: {
+                frequency: 1,
+                period: 1,
+                periodUnit: "wk",
+                dayOfWeek: ["fri"]
+              }
+            },
+            note: [{ text: "High-risk MAR protocol. Folic acid rescue on Sundays." }]
+          }
+        }
+      ]
+    };
+
+    const blob = new Blob([JSON.stringify(fhirResource, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "FHIR_DischargeSummary_RestrepoGomez_84920194.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function simulatePatientShare() {
+    const btn = document.getElementById("share-btn");
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>¡Enviado a +57 310 *** **94!</span>';
+    btn.classList.remove("bg-surface-container-highest", "text-on-surface");
+    btn.classList.add("bg-tertiary-fixed", "text-on-tertiary-fixed");
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.classList.remove("bg-tertiary-fixed", "text-on-tertiary-fixed");
+      btn.classList.add("bg-surface-container-highest", "text-on-surface");
+    }, 3500);
+  }
+</script></main><footer class="w-full bg-surface-container-lowest py-space-md print:hidden"><div class="w-full px-8 flex flex-col sm:flex-row items-center justify-between gap-space-xs text-on-surface-variant font-code-audit text-code-audit"><div>Hospital Universitario Pablo Tobón Uribe • Unidad de Farmacia Clínica &amp; Soporte CDSS</div><div class="flex items-center gap-space-base"><span>Documento Estándar OMS / Protocolo Marcado FHIR R4</span><span>Seguridad de Medicación v2.4</span></div></div></footer></body></html>

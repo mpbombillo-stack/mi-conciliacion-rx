@@ -1,0 +1,6 @@
+{
+  "name": "PharmaReconcile CDSS",
+  "description": "Sistema de conciliación medicamentosa, soporte de decisiones clínicas (CDSS) y verificación 5C a pie de cama para el Hospital Universitario Pablo Tobón Uribe (Medellín, Colombia).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
