@@ -404,7 +404,7 @@ export const ConfiguracionView: React.FC<ConfiguracionViewProps> = ({
           }`}
         >
           <span className="material-symbols-outlined text-[16px]">health_and_safety</span>
-          <span>Motor CDSS & Seguridad</span>
+          <span>Motor <ClinicalTooltip code="CDSS" position="bottom">CDSS</ClinicalTooltip> & Seguridad</span>
         </button>
 
         <button
@@ -416,7 +416,7 @@ export const ConfiguracionView: React.FC<ConfiguracionViewProps> = ({
           }`}
         >
           <span className="material-symbols-outlined text-[16px]">hub</span>
-          <span>Interoperabilidad HL7 / FHIR</span>
+          <span>Interoperabilidad <ClinicalTooltip code="HL7" position="bottom">HL7</ClinicalTooltip> / <ClinicalTooltip code="FHIR" position="bottom">FHIR</ClinicalTooltip></span>
         </button>
 
         <button

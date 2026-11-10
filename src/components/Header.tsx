@@ -120,57 +120,61 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Center Desktop Navigation Tabs */}
-        <nav className="hidden lg:flex items-center gap-1 bg-[#eff4ff] p-1 rounded-xl border border-[#bfc7d2]">
+        <nav className="hidden lg:flex items-center gap-1.5 bg-[#f0f4f9] p-1.5 rounded-2xl border border-[#bfc7d2]/70 shadow-inner">
           <button
             onClick={() => setActiveTab('matriz-de-conciliacion')}
-            className={`font-body-medium text-[13px] px-3 py-1.5 rounded-lg transition-all ${
+            className={`font-body-medium text-[13px] px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
               activeTab === 'matriz-de-conciliacion'
                 ? 'bg-[#007bb9] text-white font-bold shadow-sm'
-                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]'
+                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]/70'
             }`}
           >
-            Matriz de Conciliación
+            <span className="material-symbols-outlined text-[17px]">table_chart</span>
+            <span>Matriz de Conciliación</span>
           </button>
           <button
             onClick={() => setActiveTab('verificacion-pie-de-cama-5c')}
-            className={`font-body-medium text-[13px] px-3 py-1.5 rounded-lg transition-all ${
+            className={`font-body-medium text-[13px] px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
               activeTab === 'verificacion-pie-de-cama-5c'
                 ? 'bg-[#007bb9] text-white font-bold shadow-sm'
-                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]'
+                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]/70'
             }`}
           >
-            Verificación Pie de Cama (5C)
+            <span className="material-symbols-outlined text-[17px]">checklist</span>
+            <span>Verificación Pie de Cama (<ClinicalTooltip code="5C" position="bottom">5C</ClinicalTooltip>)</span>
           </button>
           <button
             onClick={() => setActiveTab('hoja-de-alta-oms')}
-            className={`font-body-medium text-[13px] px-3 py-1.5 rounded-lg transition-all ${
+            className={`font-body-medium text-[13px] px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
               activeTab === 'hoja-de-alta-oms'
                 ? 'bg-[#007bb9] text-white font-bold shadow-sm'
-                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]'
+                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]/70'
             }`}
           >
-            Hoja de Alta (OMS)
+            <span className="material-symbols-outlined text-[17px]">description</span>
+            <span>Hoja de Alta (<ClinicalTooltip code="OMS" position="bottom">OMS</ClinicalTooltip>)</span>
           </button>
           <button
             onClick={() => setActiveTab('auditoria-cdss')}
-            className={`font-body-medium text-[13px] px-3 py-1.5 rounded-lg transition-all ${
+            className={`font-body-medium text-[13px] px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
               activeTab === 'auditoria-cdss'
                 ? 'bg-[#007bb9] text-white font-bold shadow-sm'
-                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]'
+                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]/70'
             }`}
           >
-            Auditoría CDSS
+            <span className="material-symbols-outlined text-[17px]">verified_user</span>
+            <span>Auditoría <ClinicalTooltip code="CDSS" position="bottom">CDSS</ClinicalTooltip></span>
           </button>
           <button
             onClick={() => setActiveTab('configuracion')}
-            className={`font-body-medium text-[13px] px-3 py-1.5 rounded-lg transition-all flex items-center gap-1 ${
+            className={`font-body-medium text-[13px] px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
               activeTab === 'configuracion'
                 ? 'bg-[#007bb9] text-white font-bold shadow-sm'
-                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]'
+                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]/70'
             }`}
             title="Parámetros Institucionales y CDSS"
           >
-            <span className="material-symbols-outlined text-[16px]">settings</span>
+            <span className="material-symbols-outlined text-[17px]">settings</span>
             <span>Configuración</span>
           </button>
         </nav>
@@ -303,57 +307,61 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Mobile Tab Navigation Bar on Small Screens */}
-      <div className="flex lg:hidden overflow-x-auto bg-[#eff4ff] border-t border-[#bfc7d2] px-2 py-1 gap-1 items-center justify-between">
-        <div className="flex items-center gap-1 overflow-x-auto">
+      <div className="flex lg:hidden overflow-x-auto bg-[#f0f4f9] border-t border-[#bfc7d2] px-2.5 py-1.5 gap-1.5 items-center justify-between shadow-xs">
+        <div className="flex items-center gap-1.5 overflow-x-auto py-0.5">
           <button
             onClick={() => setActiveTab('matriz-de-conciliacion')}
-            className={`px-3 py-1.5 rounded-lg text-[12px] font-medium whitespace-nowrap ${
+            className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold whitespace-nowrap flex items-center gap-1 shrink-0 ${
               activeTab === 'matriz-de-conciliacion'
-                ? 'bg-[#007bb9] text-white font-bold'
-                : 'text-[#3f4850] hover:bg-[#dce9ff]'
+                ? 'bg-[#007bb9] text-white shadow-xs'
+                : 'text-[#3f4850] bg-white border border-[#bfc7d2]/50 hover:bg-[#dce9ff]'
             }`}
           >
-            Matriz Conciliación
+            <span className="material-symbols-outlined text-[15px]">table_chart</span>
+            <span>Matriz Conciliación</span>
           </button>
           <button
             onClick={() => setActiveTab('verificacion-pie-de-cama-5c')}
-            className={`px-3 py-1.5 rounded-lg text-[12px] font-medium whitespace-nowrap ${
+            className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold whitespace-nowrap flex items-center gap-1 shrink-0 ${
               activeTab === 'verificacion-pie-de-cama-5c'
-                ? 'bg-[#007bb9] text-white font-bold'
-                : 'text-[#3f4850] hover:bg-[#dce9ff]'
+                ? 'bg-[#007bb9] text-white shadow-xs'
+                : 'text-[#3f4850] bg-white border border-[#bfc7d2]/50 hover:bg-[#dce9ff]'
             }`}
           >
-            Verif. 5C Pie de Cama
+            <span className="material-symbols-outlined text-[15px]">checklist</span>
+            <span>Verif. Pie de Cama (<ClinicalTooltip code="5C" position="bottom">5C</ClinicalTooltip>)</span>
           </button>
           <button
             onClick={() => setActiveTab('hoja-de-alta-oms')}
-            className={`px-3 py-1.5 rounded-lg text-[12px] font-medium whitespace-nowrap ${
+            className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold whitespace-nowrap flex items-center gap-1 shrink-0 ${
               activeTab === 'hoja-de-alta-oms'
-                ? 'bg-[#007bb9] text-white font-bold'
-                : 'text-[#3f4850] hover:bg-[#dce9ff]'
+                ? 'bg-[#007bb9] text-white shadow-xs'
+                : 'text-[#3f4850] bg-white border border-[#bfc7d2]/50 hover:bg-[#dce9ff]'
             }`}
           >
-            Hoja de Alta (OMS)
+            <span className="material-symbols-outlined text-[15px]">description</span>
+            <span>Hoja de Alta (<ClinicalTooltip code="OMS" position="bottom">OMS</ClinicalTooltip>)</span>
           </button>
           <button
             onClick={() => setActiveTab('auditoria-cdss')}
-            className={`px-3 py-1.5 rounded-lg text-[12px] font-medium whitespace-nowrap ${
+            className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold whitespace-nowrap flex items-center gap-1 shrink-0 ${
               activeTab === 'auditoria-cdss'
-                ? 'bg-[#007bb9] text-white font-bold'
-                : 'text-[#3f4850] hover:bg-[#dce9ff]'
+                ? 'bg-[#007bb9] text-white shadow-xs'
+                : 'text-[#3f4850] bg-white border border-[#bfc7d2]/50 hover:bg-[#dce9ff]'
             }`}
           >
-            Auditoría CDSS
+            <span className="material-symbols-outlined text-[15px]">verified_user</span>
+            <span>Auditoría <ClinicalTooltip code="CDSS" position="bottom">CDSS</ClinicalTooltip></span>
           </button>
           <button
             onClick={() => setActiveTab('configuracion')}
-            className={`px-3 py-1.5 rounded-lg text-[12px] font-medium whitespace-nowrap flex items-center gap-1 ${
+            className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold whitespace-nowrap flex items-center gap-1 shrink-0 ${
               activeTab === 'configuracion'
-                ? 'bg-[#007bb9] text-white font-bold'
-                : 'text-[#3f4850] hover:bg-[#dce9ff]'
+                ? 'bg-[#007bb9] text-white shadow-xs'
+                : 'text-[#3f4850] bg-white border border-[#bfc7d2]/50 hover:bg-[#dce9ff]'
             }`}
           >
-            <span className="material-symbols-outlined text-[14px]">settings</span>
+            <span className="material-symbols-outlined text-[15px]">settings</span>
             <span>Configuración</span>
           </button>
         </div>

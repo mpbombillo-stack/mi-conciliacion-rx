@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AuditEvent } from '../types/clinical';
+import ClinicalTooltip from './ClinicalTooltip';
 
 interface AuditoriaCDSSViewProps {
   auditLogs: AuditEvent[];
@@ -122,11 +123,11 @@ export const AuditoriaCDSSView: React.FC<AuditoriaCDSSViewProps> = ({ auditLogs 
 
         <div className="flex gap-1.5 flex-wrap w-full sm:w-auto">
           {[
-            { id: 'ALL', label: 'Todos los Eventos' },
-            { id: 'CRITICAL_ALERT', label: 'Alertas Críticas' },
-            { id: 'OVERRIDE', label: 'Overrides PIN' },
-            { id: 'RECONCILIATION', label: 'Conciliación' },
-            { id: 'BEDSIDE_5C', label: 'Pie de Cama 5C' },
+            { id: 'ALL', label: <span>Todos los Eventos</span> },
+            { id: 'CRITICAL_ALERT', label: <span>Alertas Críticas</span> },
+            { id: 'OVERRIDE', label: <span>Overrides <ClinicalTooltip code="PIN" position="bottom">PIN</ClinicalTooltip></span> },
+            { id: 'RECONCILIATION', label: <span>Conciliación</span> },
+            { id: 'BEDSIDE_5C', label: <span>Pie de Cama <ClinicalTooltip code="5C" position="bottom">5C</ClinicalTooltip></span> },
           ].map((f) => (
             <button
               key={f.id}
