@@ -36,6 +36,7 @@ import { PharmacokineticsModal } from './components/PharmacokineticsModal';
 import { ConsolidationModal } from './components/ConsolidationModal';
 import { LoginPage } from './components/LoginPage';
 import { PatientModal } from './components/PatientModal';
+import { AddMedicationModal } from './components/AddMedicationModal';
 import ClinicalTooltip from './components/ClinicalTooltip';
 
 export default function App() {
@@ -96,6 +97,23 @@ export default function App() {
   const [isMobileDeviceView, setIsMobileDeviceView] = useState<boolean>(false);
   const [isPharmacokineticsModalOpen, setIsPharmacokineticsModalOpen] = useState<boolean>(false);
   const [isConsolidationModalOpen, setIsConsolidationModalOpen] = useState<boolean>(false);
+  const [isAddMedModalOpen, setIsAddMedModalOpen] = useState<boolean>(false);
+  const [addMedTipoDestino, setAddMedTipoDestino] = useState<'pre-ingreso' | 'intrahospitalario'>('pre-ingreso');
+
+  const handleOpenAddMedModal = (tipo: 'pre-ingreso' | 'intrahospitalario') => {
+    setAddMedTipoDestino(tipo);
+    setIsAddMedModalOpen(true);
+  };
+
+  const handleSaveCustomPreMed = (newMed: PreAdmissionMedication) => {
+    setPreAdmissionMeds((prev) => [newMed, ...prev]);
+    setIsConsolidated(false);
+  };
+
+  const handleSaveCustomOrder = (newOrder: InpatientOrder) => {
+    setOrders((prev) => [newOrder, ...prev]);
+    setIsConsolidated(false);
+  };
 
   // Sync patients to localStorage
   useEffect(() => {
@@ -378,6 +396,7 @@ export default function App() {
             onOpenPharmacokineticsModal={() => setIsPharmacokineticsModalOpen(true)}
             isConsolidated={isConsolidated}
             onOpenConsolidationModal={() => setIsConsolidationModalOpen(true)}
+            onAddNewMedication={handleOpenAddMedModal}
           />
         )}
 
@@ -451,6 +470,15 @@ export default function App() {
         onClose={() => setIsPatientModalOpen(false)}
         onSavePatient={handleAddNewPatient}
         currentPatientCount={patients.length}
+      />
+
+      {/* Add Medication / Order Modal */}
+      <AddMedicationModal
+        isOpen={isAddMedModalOpen}
+        onClose={() => setIsAddMedModalOpen(false)}
+        tipoDestino={addMedTipoDestino}
+        onSavePreAdmission={handleSaveCustomPreMed}
+        onSaveInpatientOrder={handleSaveCustomOrder}
       />
     </div>
   );

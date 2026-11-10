@@ -17,6 +17,7 @@ interface MatrizConciliacionViewProps {
   onOpenPharmacokineticsModal: () => void;
   isConsolidated: boolean;
   onOpenConsolidationModal: () => void;
+  onAddNewMedication?: (tipo: 'pre-ingreso' | 'intrahospitalario') => void;
 }
 
 export const MatrizConciliacionView: React.FC<MatrizConciliacionViewProps> = ({
@@ -26,6 +27,7 @@ export const MatrizConciliacionView: React.FC<MatrizConciliacionViewProps> = ({
   onUpdateOrderAction,
   onValidateOverride,
   onOpenPharmacokineticsModal,
+  onAddNewMedication,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedAtcFilter, setSelectedAtcFilter] = useState<'Todos' | 'ATC-C' | 'ATC-A' | 'ATC-M'>('Todos');
@@ -85,9 +87,21 @@ export const MatrizConciliacionView: React.FC<MatrizConciliacionViewProps> = ({
                 <span className="material-symbols-outlined text-[#006194] text-[20px]">inventory_2</span>
                 <h2 className="font-semibold text-[15px] text-[#0b1c30]">Medicación Pre-Ingreso</h2>
               </div>
-              <span className="font-label-caps text-[10px] bg-[#cce5ff] text-[#001d31] px-2 py-0.5 rounded-full font-bold">
-                {preAdmissionMeds.length} Fármacos
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="font-label-caps text-[10px] bg-[#cce5ff] text-[#001d31] px-2 py-0.5 rounded-full font-bold">
+                  {preAdmissionMeds.length} Fármacos
+                </span>
+                {onAddNewMedication && (
+                  <button
+                    onClick={() => onAddNewMedication('pre-ingreso')}
+                    className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#006194] hover:bg-[#007bb9] text-white text-[11px] font-bold shadow-xs transition-all"
+                    title="Registrar nuevo medicamento pre-ingreso o ambulatorio"
+                  >
+                    <span className="material-symbols-outlined text-[14px]">add</span>
+                    <span>Agregar</span>
+                  </button>
+                )}
+              </div>
             </div>
             <p className="font-body-dense text-[12px] text-[#3f4850]">
               Historia clínica electrónica ambulatoria, entrevista a familiar y fitoterapia activa.
@@ -228,11 +242,34 @@ export const MatrizConciliacionView: React.FC<MatrizConciliacionViewProps> = ({
                         </div>
                       )}
 
-                      <div className="flex items-center justify-between pt-1 text-[11px] text-[#707881]">
-                        <span className="truncate max-w-[210px]">Indicación: {med.indicacion}</span>
-                        {med.adherencia && (
-                          <span className="text-[#00694c] font-medium">Adherencia: {med.adherencia}</span>
+                      <div className="flex flex-col gap-1 pt-1 border-t border-[#bfc7d2]/30 text-[11px] text-[#707881]">
+                        <div className="flex items-center justify-between">
+                          <span className="truncate max-w-[210px] font-medium text-[#0b1c30]">Indicación: {med.indicacion}</span>
+                          {med.adherencia && (
+                            <span className="text-[#00694c] font-medium">Adherencia: {med.adherencia}</span>
+                          )}
+                        </div>
+
+                        {/* Extended Details: Prescriptor, Fechas y Duración */}
+                        {(med.prescritoPor || med.fechaInicio || med.fechaFinEstimada) && (
+                          <div className="bg-[#f0f4f9] p-1.5 rounded-lg text-[10px] space-y-0.5 mt-0.5">
+                            {med.prescritoPor && (
+                              <div className="text-[#006194] font-semibold flex items-center gap-1">
+                                <span className="material-symbols-outlined text-[12px]">medical_services</span>
+                                <span>Formulado por: {med.prescritoPor}</span>
+                              </div>
+                            )}
+                            <div className="flex items-center justify-between text-[#565e74]">
+                              {med.fechaInicio && <span>Inicio: {med.fechaInicio}</span>}
+                              {med.fechaFinEstimada && (
+                                <span className={med.esTratamientoCronico ? 'text-[#00694c] font-bold' : 'text-[#705d00] font-bold'}>
+                                  {med.esTratamientoCronico ? '• Crónico' : `Fin: ${med.fechaFinEstimada}`}
+                                </span>
+                              )}
+                            </div>
+                          </div>
                         )}
+
                         {med.ultimaToma && (
                           <span className="text-[#565e74]">Última toma: {med.ultimaToma}</span>
                         )}
@@ -261,9 +298,21 @@ export const MatrizConciliacionView: React.FC<MatrizConciliacionViewProps> = ({
                 <span className="material-symbols-outlined text-[#007bb9] text-[20px]">local_hospital</span>
                 <h2 className="font-semibold text-[15px] text-[#0b1c30]">Órdenes Hospitalarias Activas</h2>
               </div>
-              <div className="flex items-center gap-1.5 bg-[#eff4ff] px-2.5 py-1 rounded-md border border-[#bfc7d2]/40">
-                <span className="w-2 h-2 rounded-full bg-[#1e8462]"></span>
-                <span className="font-code-audit text-[11px] text-[#0b1c30]">HL7 RXE: Sincronizado hace 3 min</span>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 bg-[#eff4ff] px-2.5 py-1 rounded-md border border-[#bfc7d2]/40">
+                  <span className="w-2 h-2 rounded-full bg-[#1e8462]"></span>
+                  <span className="font-code-audit text-[11px] text-[#0b1c30]">HL7 RXE: Sincronizado hace 3 min</span>
+                </div>
+                {onAddNewMedication && (
+                  <button
+                    onClick={() => onAddNewMedication('intrahospitalario')}
+                    className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#007bb9] hover:bg-[#0284c7] text-white text-[11px] font-bold shadow-xs transition-all"
+                    title="Crear nueva orden intrahospitalaria"
+                  >
+                    <span className="material-symbols-outlined text-[14px]">add</span>
+                    <span>Nueva Orden</span>
+                  </button>
+                )}
               </div>
             </div>
 
@@ -341,6 +390,17 @@ export const MatrizConciliacionView: React.FC<MatrizConciliacionViewProps> = ({
                           {order.prescriptor}
                         </span>
                       </div>
+
+                      {/* Extended Details for Inpatient Order: Fechas y Duración */}
+                      {(order.fechaInicio || order.fechaFinEstimada || order.duracionDias) && (
+                        <div className="bg-[#f0f4f9] p-1.5 rounded-lg text-[10px] flex items-center justify-between text-[#565e74] mt-1">
+                          {order.fechaInicio && <span>Inicio: {order.fechaInicio}</span>}
+                          {order.duracionDias && <span>Duración: {order.duracionDias} días</span>}
+                          {order.fechaFinEstimada && (
+                            <span className="text-[#006194] font-semibold">Fin: {order.fechaFinEstimada}</span>
+                          )}
+                        </div>
+                      )}
                     </div>
 
                     <div className="text-right shrink-0">

@@ -77,6 +77,11 @@ export interface PreAdmissionMedication {
   ultimaToma?: string;
   alerta?: string;
   cumInvima?: string;
+  // Campos clínicos extendidos
+  fechaInicio?: string;
+  prescritoPor?: string; // Quién lo formuló
+  fechaFinEstimada?: string; // Si se sabe cuándo finaliza o si es crónico/indefinido
+  esTratamientoCronico?: boolean;
 }
 
 export type OrderActionType = 'continuar' | 'suspender' | 'modificar' | 'sustituir';
@@ -97,6 +102,10 @@ export interface InpatientOrder {
   esBloqueoFatal?: boolean;
   horario?: string[];
   cumInvima?: string;
+  // Campos clínicos extendidos
+  fechaInicio?: string;
+  fechaFinEstimada?: string;
+  duracionDias?: number;
 }
 
 export interface CdssAlert {
