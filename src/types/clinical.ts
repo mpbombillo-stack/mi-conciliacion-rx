@@ -1,4 +1,5 @@
 export type TabView =
+  | 'dashboard-pacientes'
   | 'matriz-de-conciliacion'
   | 'verificacion-pie-de-cama-5c'
   | 'hoja-de-alta-oms'
@@ -26,6 +27,18 @@ export interface Patient {
   rfidPulsera: string;
   medicoTratante: string;
   farmaceuticoAsignado: string;
+  // Estado de conciliación y paciente
+  estadoConciliacion?: 'conciliado' | 'en_progreso' | 'bloqueado' | 'pendiente';
+  nivelDiscrepancias?: 'ninguna' | 'leve' | 'moderada' | 'critica';
+  estadoClinico?: 'estable' | 'cuidado_intermedio' | 'critico' | 'alta_pendiente';
+  discrepanciasCount?: {
+    total: number;
+    criticas: number;
+    omisiones: number;
+    duplicidades: number;
+    interacciones: number;
+  };
+  ultimaActualizacion?: string;
 }
 
 export type PreAdmissionDrugStatus = 'Prescrito' | 'Automedicado' | 'Especialidad' | 'Fitoterapia';

@@ -17,6 +17,7 @@ import {
 } from './types/clinical';
 import {
   PATIENT_CARLOS,
+  MOCK_ADDITIONAL_PATIENTS,
   INITIAL_PRE_ADMISSION_MEDS,
   INITIAL_INPATIENT_ORDERS,
   INITIAL_CDSS_ALERTS,
@@ -25,6 +26,7 @@ import {
 } from './data/mockClinicalData';
 import { Header } from './components/Header';
 import { PatientBanner } from './components/PatientBanner';
+import { DashboardPacientesView } from './components/DashboardPacientesView';
 import { MatrizConciliacionView } from './components/MatrizConciliacionView';
 import { Verificacion5CView } from './components/Verificacion5CView';
 import { HojaAltaOMSView } from './components/HojaAltaOMSView';
@@ -63,12 +65,15 @@ export default function App() {
     const savedPatients = localStorage.getItem('miconciliacion_patients');
     if (savedPatients) {
       try {
-        return JSON.parse(savedPatients);
+        const parsed = JSON.parse(savedPatients);
+        if (Array.isArray(parsed) && parsed.length > 1) {
+          return parsed;
+        }
       } catch (e) {
-        return [PATIENT_CARLOS];
+        return [PATIENT_CARLOS, ...MOCK_ADDITIONAL_PATIENTS];
       }
     }
-    return [PATIENT_CARLOS];
+    return [PATIENT_CARLOS, ...MOCK_ADDITIONAL_PATIENTS];
   });
 
   const [activePatientId, setActivePatientId] = useState<string>(() => {
@@ -329,14 +334,34 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 w-full pt-16 flex flex-col">
-        {/* Persistent Patient Banner shown on Matriz and Auditoria views */}
-        {activeTab !== 'verificacion-pie-de-cama-5c' && activeTab !== 'hoja-de-alta-oms' && (
+        {/* Persistent Patient Banner shown on relevant views */}
+        {activeTab !== 'verificacion-pie-de-cama-5c' && activeTab !== 'hoja-de-alta-oms' && activeTab !== 'configuracion' && activeTab !== 'dashboard-pacientes' && (
           <PatientBanner
             patient={activePatient}
             hasCriticalBlock={isTripleWhammyActive}
             unresolvedCount={unresolvedDiscrepancies}
             isConsolidated={isConsolidated}
             onOpenConsolidationModal={() => setIsConsolidationModalOpen(true)}
+            onOpenNewPatientModal={() => setIsPatientModalOpen(true)}
+          />
+        )}
+
+        {/* Tab 0: Dashboard de Pacientes */}
+        {activeTab === 'dashboard-pacientes' && (
+          <DashboardPacientesView
+            patients={patients}
+            activePatientId={activePatientId}
+            onSelectPatient={(pid) => {
+              setActivePatientId(pid);
+              setIsConsolidated(false);
+            }}
+            onNavigateToTab={(tab, pid) => {
+              if (pid) {
+                setActivePatientId(pid);
+                setIsConsolidated(false);
+              }
+              setActiveTab(tab);
+            }}
             onOpenNewPatientModal={() => setIsPatientModalOpen(true)}
           />
         )}

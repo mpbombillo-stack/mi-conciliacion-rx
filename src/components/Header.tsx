@@ -122,6 +122,17 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Center Desktop Navigation Tabs */}
         <nav className="hidden lg:flex items-center gap-1.5 bg-[#f0f4f9] p-1.5 rounded-2xl border border-[#bfc7d2]/70 shadow-inner">
           <button
+            onClick={() => setActiveTab('dashboard-pacientes')}
+            className={`font-body-medium text-[13px] px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
+              activeTab === 'dashboard-pacientes'
+                ? 'bg-[#007bb9] text-white font-bold shadow-sm'
+                : 'text-[#3f4850] hover:text-[#0b1c30] hover:bg-[#dce9ff]/70'
+            }`}
+          >
+            <span className="material-symbols-outlined text-[17px]">dashboard</span>
+            <span>Dashboard</span>
+          </button>
+          <button
             onClick={() => setActiveTab('matriz-de-conciliacion')}
             className={`font-body-medium text-[13px] px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 ${
               activeTab === 'matriz-de-conciliacion'
@@ -309,6 +320,17 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Tab Navigation Bar on Small Screens */}
       <div className="flex lg:hidden overflow-x-auto bg-[#f0f4f9] border-t border-[#bfc7d2] px-2.5 py-1.5 gap-1.5 items-center justify-between shadow-xs">
         <div className="flex items-center gap-1.5 overflow-x-auto py-0.5">
+          <button
+            onClick={() => setActiveTab('dashboard-pacientes')}
+            className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold whitespace-nowrap flex items-center gap-1 shrink-0 ${
+              activeTab === 'dashboard-pacientes'
+                ? 'bg-[#007bb9] text-white shadow-xs'
+                : 'text-[#3f4850] bg-white border border-[#bfc7d2]/50 hover:bg-[#dce9ff]'
+            }`}
+          >
+            <span className="material-symbols-outlined text-[15px]">dashboard</span>
+            <span>Dashboard</span>
+          </button>
           <button
             onClick={() => setActiveTab('matriz-de-conciliacion')}
             className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold whitespace-nowrap flex items-center gap-1 shrink-0 ${
